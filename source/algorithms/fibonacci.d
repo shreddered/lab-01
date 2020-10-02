@@ -20,7 +20,7 @@ class FibonacciSearcher(alias func) : ISearcher {
         enum ulong N = 30;
         enum fib = recurrence!"a[n - 1] + a[n - 2]"(1, 1)
             .take(N + 3)
-            .array; 
+            .array;
         // table header
         writefln!"%d calculations"(N);
         writefln("|%-16s|%-15s|", "Num of iters (k)", "Interval");
