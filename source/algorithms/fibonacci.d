@@ -23,8 +23,8 @@ class FibonacciSearcher(alias func) : ISearcher {
             .array;
         // table header
         writefln!"N = %d"(N);
-        writefln("|%-16s|%-15s|", "Num of iters (k)", "Interval");
-        writeln("|----------------|---------------|");
+        writefln("|%-20s|%-20s|", "Количество точек (N)", "Точка минимума");
+        writeln("|--------------------|--------------------|");
 
         // preparations
         double x1 = _a + interval() * fib[N] / fib[N + 2],
@@ -45,9 +45,9 @@ class FibonacciSearcher(alias func) : ISearcher {
                 y2 = y1;
                 y1 = func(x1);
             }
-            writefln!"|%-16d|%- 1.4f+-%-1.4f|"(k, (_a + _b) / 2, interval() / 2);
+            writefln!"|%-20d|%- 3.7f±%-3.7f|"(k, (_a + _b) / 2, interval() / 2);
         }
-        writeln("|----------------|---------------|");
-        writefln!"x = %1.4f+-%1.4f"((_a + _b) / 2, interval() / 2);
+        writeln("|--------------------|--------------------|");
+        writefln!"x = %3.7f±%3.7f"((_a + _b) / 2, interval() / 2);
     }
 }

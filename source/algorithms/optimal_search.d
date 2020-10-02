@@ -19,8 +19,8 @@ class OptimalPassiveSearcher(alias func) : ISearcher {
     }
     public override void search(const double eps = 0.1) {
         ulong n;
-        writefln("|%-5c|%-15c|", 'n', 'x');
-        writeln("|-----|---------------|");
+        writefln("|%-20s|%-20s|", "Количество точек (N)", "Точка минимума");
+        writeln("|--------------------|--------------------|");
         double ans;
         for (n = 2; delta(n) * 2 >= eps; ++n) {
             double[] x = iota(1, n + 1)
@@ -29,9 +29,9 @@ class OptimalPassiveSearcher(alias func) : ISearcher {
             ulong index = x.map!func
                 .minIndex;
             ans = x[index];
-            writefln("|%-5d|%- 1.4f+-%-1.4f|", n, ans, delta(n));
+            writefln("|%-20d|%- 3.7f±%-3.7f|", n, ans, delta(n));
         }
-        writeln("|-----|---------------|");
-        writefln!"x = %1.4f+-%1.4f"(ans, delta(n - 1));
+        writeln("|--------------------|--------------------|");
+        writefln!"x = %3.7f±%3.7f"(ans, delta(n - 1));
     }
 }
