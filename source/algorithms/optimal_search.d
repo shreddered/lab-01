@@ -21,14 +21,17 @@ class OptimalPassiveSearcher(alias func) : ISearcher {
         ulong n;
         writefln("|%-5c|%-15c|", 'n', 'x');
         writeln("|-----|---------------|");
+        double ans;
         for (n = 2; delta(n) * 2 >= eps; ++n) {
             double[] x = iota(1, n + 1)
                 .map!(k => delta(n) * k + _a)
                 .array;
             ulong index = x.map!func
                 .minIndex;
-            writefln("|%-5d|%- 1.4f+-%-1.4f|", n, x[index], delta(n)); 
+            ans = x[index];
+            writefln("|%-5d|%- 1.4f+-%-1.4f|", n, ans, delta(n));
         }
         writeln("|-----|---------------|");
+        writefln!"x = %1.4f+-%1.4f"(ans, delta(n));
     }
 }
