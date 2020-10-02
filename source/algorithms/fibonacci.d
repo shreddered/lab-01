@@ -47,5 +47,6 @@ class FibonacciSearcher(alias func) : ISearcher {
             }
             writefln!"|%-16d|%- 1.4f+-%-1.4f|"(k, (_a + _b) / 2, interval() / 2);
         }
+        writeln("|----------------|---------------|");
     }
 }

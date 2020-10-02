@@ -29,5 +29,6 @@ class OptimalPassiveSearcher(alias func) : ISearcher {
                 .minIndex;
             writefln("|%-5d|%- 1.4f+-%-1.4f|", n, x[index], delta(n)); 
         }
+        writeln("|-----|---------------|");
     }
 }
