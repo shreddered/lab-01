@@ -1,3 +1,5 @@
+import algorithms;
+
 import std.algorithm : map, min, minIndex;
 import std.array : array;
 import std.math : exp;
