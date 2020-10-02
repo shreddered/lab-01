@@ -13,4 +13,5 @@
 
 Исходный код программы приведён в директории [source](source/).
 
-[lab-01-part2](screenshots/fibonacci.png)
+
+![lab-01-fibonacci-example](screenshots/fibonacci.png)
