@@ -32,6 +32,6 @@ class OptimalPassiveSearcher(alias func) : ISearcher {
             writefln("|%-5d|%- 1.4f+-%-1.4f|", n, ans, delta(n));
         }
         writeln("|-----|---------------|");
-        writefln!"x = %1.4f+-%1.4f"(ans, delta(n));
+        writefln!"x = %1.4f+-%1.4f"(ans, delta(n - 1));
     }
 }
