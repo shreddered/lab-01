@@ -22,7 +22,7 @@ class FibonacciSearcher(alias func) : ISearcher {
             .take(N + 3)
             .array;
         // table header
-        writefln!"%d calculations"(N);
+        writefln!"N = %d"(N);
         writefln("|%-16s|%-15s|", "Num of iters (k)", "Interval");
         writeln("|----------------|---------------|");
 
